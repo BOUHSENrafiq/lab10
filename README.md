@@ -1,2 +1,0 @@
-# lab10
-LAB 10 ANGULAR
