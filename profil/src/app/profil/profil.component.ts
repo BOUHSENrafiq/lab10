@@ -1,13 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {normalizeSourceMaps} from '@angular-devkit/build-angular/src/utils';
 
 @Component({
-  selector: 'app-formulaire',
-  templateUrl: './formulaire.component.html',
-  styleUrls: ['./formulaire.component.css']
+  selector: 'app-profil',
+  templateUrl: './profil.component.html',
+  styleUrls: ['./profil.component.css']
 })
-export class FormulaireComponent implements OnInit {
+export class ProfilComponent implements OnInit {
   formulaire: FormGroup;
 
   constructor(private _form: FormBuilder) {
