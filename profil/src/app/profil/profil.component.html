@@ -1,26 +1,26 @@
-<div class="mat-card">
+<div>
   <form [formGroup]="formulaire" method="post">
     <!-- value:{{formulaire.value|json}} <hr> : activer pour afficher le résultat sous forme json en haut de la page-->
 
     <mat-form-field>
-      <input matInput placeholder="Nom" formControlName="nom">
+      <input matInput placeholder="Name" formControlName="nom">
 
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input matInput placeholder="Prénom" formControlName="prenom">
+      <input matInput placeholder="First name" formControlName="prenom">
 
     </mat-form-field>
     <br>
     <mat-form-field>
       <input matInput placeholder="E-mail" formControlName="email">
       <mat-error *ngIf="email.invalid">
-        your e-mail is not correct
+        Your e-mail is not correct
       </mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
-      <input matInput placeholder="Téléphone" formControlName="telephone">
+      <input matInput placeholder="Phone number" formControlName="telephone">
 
     </mat-form-field>
     <br>

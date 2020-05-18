@@ -1,3 +1,6 @@
+*{
+  font-family: "Times New Roman";
+}
 div{
   position:fixed;
   top: 50%;
@@ -6,11 +9,10 @@ div{
   height:auto;
   margin-top: -9em; /*set to a negative number 1/2 of your height*/
   margin-left: -15em; /*set to a negative number 1/2 of your width*/
-  border: 1px solid #ccc;
-  background-color: #f3f3f3;
+  border: 1px solid beige;
+  background-color: beige;
 }
 button {
-  font-family: "Times New Roman";
   font-weight: bold;
   font-size: 1rem;
   background-color: #94aad4;
@@ -28,20 +30,20 @@ button {
 #cancel{
   margin-left: 2rem;
 }
-#submit:hover {
-  background-color: #94aad4;
-  color: green;
+#submit:enabled {
+  background-color: green;
+  color: black;
   cursor: auto;
 }
 
 #submit:disabled {
-  background-color: #94aad4;
-  color: red;
+  background-color: red;
+  color: black;
   cursor: auto;
 }
 
 input {
-  height: 2em;
+  height: 2rem;
   font-size: 2em;
   padding-left: 0em;
 }
