@@ -1,31 +1,33 @@
-<div>
-  <form [formGroup]="formulaire">
-    <!-- value:{{formulaire.value|json}} <hr> : activer pour affiche le résultat sous forme json en haut de la page-->
+<div class="mat-card">
+  <form [formGroup]="formulaire" method="post">
+    <!-- value:{{formulaire.value|json}} <hr> : activer pour afficher le résultat sous forme json en haut de la page-->
 
     <mat-form-field>
       <input matInput placeholder="Nom" formControlName="nom">
 
     </mat-form-field>
-    <hr>
+    <br>
     <mat-form-field>
       <input matInput placeholder="Prénom" formControlName="prenom">
 
     </mat-form-field>
-    <hr>
+    <br>
     <mat-form-field>
       <input matInput placeholder="E-mail" formControlName="email">
       <mat-error *ngIf="email.invalid">
         your e-mail is not correct
       </mat-error>
     </mat-form-field>
-    <hr>
+    <br>
     <mat-form-field>
       <input matInput placeholder="Téléphone" formControlName="telephone">
 
     </mat-form-field>
-    <hr>
+    <br>
     <mat-checkbox formControlName="agree" color="accent"> are you done!</mat-checkbox>
-    <hr>
-    <button mat-raised-button [disabled]="formulaire.invalid" color="primary">Submit</button>
+    <br>
+    <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" >Submit</button>
+    <button id="reset" mat-raised-button  color="primary" (click)="formulaire.reset()">Reset</button>
+    <button id="cancel" mat-raised-button  color="primary" >Cancel</button>
   </form>
 </div>
