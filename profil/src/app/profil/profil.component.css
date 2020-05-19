@@ -20,26 +20,29 @@ button {
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
+
 }
 #submit{
   margin-left: 13rem;
 }
 #reset{
   margin-left: 2rem;
+  color: black;
 }
 #cancel{
   margin-left: 2rem;
+  color: black;
 }
 #submit:enabled {
   background-color: green;
   color: black;
-  cursor: auto;
+  cursor: pointer;
 }
 
 #submit:disabled {
   background-color: red;
   color: black;
-  cursor: auto;
+  cursor: pointer;
 }
 
 input {
