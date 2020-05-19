@@ -1,7 +1,7 @@
 *{
   font-family: "Times New Roman";
 }
-div{
+form{
   position:fixed;
   top: 50%;
   left: 50%;
@@ -15,12 +15,10 @@ div{
 button {
   font-weight: bold;
   font-size: 1rem;
-  background-color: #94aad4;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
-
 }
 #submit{
   margin-left: 13rem;
@@ -28,10 +26,12 @@ button {
 #reset{
   margin-left: 2rem;
   color: black;
+  background-color: #7676ea;
 }
 #cancel{
   margin-left: 2rem;
   color: black;
+  background-color: #7676ea;
 }
 #submit:enabled {
   background-color: green;
