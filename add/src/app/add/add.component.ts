@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CrudService} from '../service/crud.service';
 
 @Component({
   selector: 'app-add',
@@ -7,11 +8,27 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  formulaire: FormGroup;
-
-  constructor(private _form: FormBuilder) {
+  private formulaire: FormGroup;
+  constructor(private _form: FormBuilder, public _crudService: CrudService) {
   }
-
+  createParticpant(){
+    let create = {};
+    create['id'] = this.id;
+    create['name'] = this.nom;
+    create['firstname'] = this.prenom;
+    create['age'] = this.age;
+    create['email'] = this.email;
+    create['phone'] = this.telephone;
+    this._crudService.createParticipant(create).then(resp => {
+     this.id = '';
+     this.nom = '';
+     this.prenom = '';
+     this.age = '';
+     this.email = '';
+     this.telephone = '';
+     console.log(resp);
+    }).catch(error => { console.log('error'); });
+  }
   ngOnInit() {
     this.formulaire = this._form.group({
       id: ['', [Validators.required]],
@@ -46,4 +63,5 @@ export class AddComponent implements OnInit {
   get age() {
     return this.formulaire.get('age');
   }
+
 }

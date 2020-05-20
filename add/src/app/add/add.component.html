@@ -2,7 +2,7 @@
 <form [formGroup]="formulaire" method="post">
   <!-- value:{{formulaire.value|json}} <hr> : activer pour afficher le résultat sous forme json en haut de la page-->
   <mat-form-field>
-    <input matInput placeholder="Id" formControlName="id">
+    <input matInput placeholder="Id"  formControlName="id" >
 
   </mat-form-field>
   <br>
@@ -34,7 +34,7 @@
   </mat-form-field>
   <br>
 
-  <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" >Submit</button>
+  <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" (click)="createParticpant()" >Create</button>
   <button id="reset" mat-raised-button  color="primary" (click)="formulaire.reset()">Reset</button>
   <button id="cancel" mat-raised-button  color="primary" >Cancel</button>
 </form>
