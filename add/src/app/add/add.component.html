@@ -1,5 +1,5 @@
 
-<form [formGroup]="formulaire" method="post" (ngSubmit)="onSubmit()" >
+<form [formGroup]="formulaire" method="post">
   <!-- value:{{formulaire.value|json}} <hr> : activer pour afficher le résultat sous forme json en haut de la page-->
   <mat-form-field>
     <input matInput placeholder="Id"  formControlName="id" >
@@ -23,7 +23,9 @@
   <br>
   <mat-form-field>
     <input type="email" matInput placeholder="E-mail" formControlName="email">
-
+    <mat-error *ngIf="email.invalid">
+      Your e-mail syntax is not correct!
+    </mat-error>
   </mat-form-field>
   <br>
   <mat-form-field>

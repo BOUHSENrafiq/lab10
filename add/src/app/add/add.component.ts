@@ -15,6 +15,7 @@ export class AddComponent implements OnInit {
     const data = this.formulaire.value;
     this.crudService.createParticipants(data)
       .then(res => {
+        console.log('the participant has been added');
         /*do something here....
         maybe clear the form or give a success message*/
       });
@@ -28,5 +29,27 @@ export class AddComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       telephone: ['', [Validators.required]],
     });
+  }
+  get email() {
+    return this.formulaire.get('email');
+  }
+  get nom() {
+    return this.formulaire.get('nom');
+  }
+
+  get prenom() {
+    return this.formulaire.get('prenom');
+  }
+
+  get telephone() {
+    return this.formulaire.get('telephone');
+  }
+
+  get id() {
+    return this.formulaire.get('id');
+  }
+
+  get age() {
+    return this.formulaire.get('age');
   }
 }
