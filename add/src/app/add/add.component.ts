@@ -15,10 +15,11 @@ export class AddComponent implements OnInit {
     const data = this.formulaire.value;
     this.crudService.createParticipants(data)
       .then(res => {
-        console.log('the participant has been added');
         /*do something here....
-        maybe clear the form or give a success message*/
+        maybe give a success message*/
       });
+    console.log('the participant has been added'); /* success message  */
+    this.formulaire.reset(); /* clear the form after add */
   }
   ngOnInit() {
     this.formulaire = this.form.group({
