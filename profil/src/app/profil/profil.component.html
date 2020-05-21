@@ -26,7 +26,7 @@
     <br>
     <mat-checkbox formControlName="agree" color="accent"> are you done!</mat-checkbox>
     <br>
-    <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" >Submit</button>
+    <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" (click)="onSubmit()">Submit</button>
     <button id="reset" mat-raised-button  color="primary" (click)="formulaire.reset()">Reset</button>
     <button id="cancel" mat-raised-button  color="primary" >Cancel</button>
   </form>

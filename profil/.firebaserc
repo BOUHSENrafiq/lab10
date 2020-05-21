@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "labtenangular": {
+      "hosting": {
+        "profil": [
+          "labtenangular"
+        ]
+      }
+    }
+  }
+}

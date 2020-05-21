@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CrudService} from "../service/crud.service";
 
 @Component({
   selector: 'app-profil',
@@ -9,9 +10,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class ProfilComponent implements OnInit {
   formulaire: FormGroup;
 
-  constructor(private _form: FormBuilder) {
+  constructor(private _form: FormBuilder, private crudService: CrudService) {
   }
-
+  onSubmit() {
+    const data = this.formulaire.value;
+    this.crudService.createEnseignants(data)
+      .then(res => {
+        /*do something here....
+        maybe give a success message*/
+      });
+    console.log('the participant has been added'); /* success message  */
+    this.formulaire.reset(); /* clear the form after add */
+  }
   ngOnInit() {
     this.formulaire = this._form.group({
       nom: ['', [Validators.required]],
