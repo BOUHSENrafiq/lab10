@@ -9,28 +9,18 @@ import {CrudService} from '../service/crud.service';
 })
 export class AddComponent implements OnInit {
   private formulaire: FormGroup;
-  constructor(private _form: FormBuilder, public _crudService: CrudService) {
+  constructor(private form: FormBuilder, private crudService: CrudService) {
   }
-  createParticpant(){
-    let create = {};
-    create['id'] = this.id;
-    create['name'] = this.nom;
-    create['firstname'] = this.prenom;
-    create['age'] = this.age;
-    create['email'] = this.email;
-    create['phone'] = this.telephone;
-    this._crudService.createParticipant(create).then(resp => {
-     this.id = '';
-     this.nom = '';
-     this.prenom = '';
-     this.age = '';
-     this.email = '';
-     this.telephone = '';
-     console.log(resp);
-    }).catch(error => { console.log('error'); });
+  onSubmit() {
+    const data = this.formulaire.value;
+    this.crudService.createParticipants(data)
+      .then(res => {
+        /*do something here....
+        maybe clear the form or give a success message*/
+      });
   }
   ngOnInit() {
-    this.formulaire = this._form.group({
+    this.formulaire = this.form.group({
       id: ['', [Validators.required]],
       nom: ['', [Validators.required]],
       prenom: ['', [Validators.required]],
@@ -39,29 +29,4 @@ export class AddComponent implements OnInit {
       telephone: ['', [Validators.required]],
     });
   }
-
-  get email() {
-    return this.formulaire.get('email');
-  }
-
-  get nom() {
-    return this.formulaire.get('nom');
-  }
-
-  get prenom() {
-    return this.formulaire.get('prenom');
-  }
-
-  get telephone() {
-    return this.formulaire.get('telephone');
-  }
-
-  get id() {
-    return this.formulaire.get('id');
-  }
-
-  get age() {
-    return this.formulaire.get('age');
-  }
-
 }

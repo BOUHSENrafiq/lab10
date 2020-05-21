@@ -6,9 +6,14 @@ import {AngularFirestore} from '@angular/fire/firestore';
 })
 export class CrudService {
 
-  constructor(public fireservices: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) {}
 
-  createParticipant(create){
-    return this.fireservices.collection('participants').add(create);
-    }
+  createParticipants(data) {
+    return new Promise<any>((resolve, reject) => {
+      this.firestore
+        .collection('participants')
+        .add(data)
+        .then(res => {}, err => reject(err));
+    });
+  }
   }

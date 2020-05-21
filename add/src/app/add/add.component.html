@@ -1,5 +1,5 @@
 
-<form [formGroup]="formulaire" method="post">
+<form [formGroup]="formulaire" method="post" (ngSubmit)="onSubmit()" >
   <!-- value:{{formulaire.value|json}} <hr> : activer pour afficher le résultat sous forme json en haut de la page-->
   <mat-form-field>
     <input matInput placeholder="Id"  formControlName="id" >
@@ -23,9 +23,7 @@
   <br>
   <mat-form-field>
     <input type="email" matInput placeholder="E-mail" formControlName="email">
-    <mat-error *ngIf="email.invalid">
-      Your e-mail is not correct
-    </mat-error>
+
   </mat-form-field>
   <br>
   <mat-form-field>
@@ -34,7 +32,7 @@
   </mat-form-field>
   <br>
 
-  <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" (click)="createParticpant()" >Create</button>
+  <button id="submit" mat-raised-button [disabled]="formulaire.invalid" color="primary" (click)="onSubmit()" >Create</button>
   <button id="reset" mat-raised-button  color="primary" (click)="formulaire.reset()">Reset</button>
   <button id="cancel" mat-raised-button  color="primary" >Cancel</button>
 </form>
